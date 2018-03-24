@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+// import configSchema from './src/servers/realm/configure'
+
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -21,6 +23,10 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor() {
+    super();
+    // configSchema()
+  }
   render() {
     return (
       <View style={styles.container}>
