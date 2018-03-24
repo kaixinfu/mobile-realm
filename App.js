@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-// import configSchema from './src/servers/realm/configure'
+import configSchema from './src/servers/realm/configure'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +

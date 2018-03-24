@@ -1,3 +1,5 @@
+'use strict';
+
 import Realm from 'realm';
 import DeviceInfo from 'react-native-device-info'
 
