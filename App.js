@@ -25,7 +25,7 @@ type Props = {};
 export default class App extends Component<Props> {
   constructor() {
     super();
-    // configSchema()
+    configSchema()
   }
   render() {
     return (

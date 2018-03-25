@@ -1,13 +1,18 @@
 'use strict';
-
+import React, { Component } from 'react';
+import {
+    Platform,
+} from 'react-native';
 import Realm from 'realm';
 import DeviceInfo from 'react-native-device-info'
 
 import Schema from '../../stores/schema'
 
 function configSchema() {
+    console.log('configSchema ======> ')
     const schema = new Schema();
-    if (__DEV__ && Platform.OS === 'ios' && DeviceInfo.isEmulator()) {
+// && DeviceInfo.isEmulator()
+    if (__DEV__ && Platform.OS === 'ios') {
         Realm.defaultPath = '/Users/Shared/realm-data/data.realm'
     }
     console.log('==tl Realm.defaultPath', Realm.defaultPath);
