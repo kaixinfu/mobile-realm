@@ -1,3 +1,4 @@
+import {observable} from 'mobx';
 import realm from '../../servers/realm';
 import Entity from './Entity'
 import {copyProperties} from '../../lib/ComFuncs'

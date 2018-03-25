@@ -1,8 +1,24 @@
 import Realm from 'realm';
+import _ from 'lodash';
 
-import Schema from '../../stores/schema';
+import * as storeSchema from '../../stores/schema';
 
-const schema = new Schema();
+const schema = _.values(storeSchema.default)
+
+const schemas = [
+    {schema: schema, schemaVersion: 1, migration: (oldRealm, newRealm) => {
+            // only apply this change if upgrading to schemaVersion 1
+            if (oldRealm.schemaVersion < 1) {
+                let oldObjects = oldRealm.objects('RiskThumb');
+                let newObjects = newRealm.objects('RiskThumb');
+
+                // loop through all objects and set the name property in the new schema
+                for (let i = 0; i < oldObjects.length; i++) {
+                    newObjects[i].feature = oldObjects[i].feature.toString()
+                }
+            }
+        }},
+]
 
 function _dealObj(obj,toStr){
     if(typeof(obj) == 'number'&&toStr){
@@ -120,7 +136,7 @@ function cascadingCopy(object,toStr) {
 
     return object;
 }
-const realm = Realm(schema.getNewSchemas());
+const realm = new Realm(schemas[schemas.length - 1]);
 realm.cascadingDelete = cascadingDelete;
 realm.cascadingCopy = cascadingCopy;
 

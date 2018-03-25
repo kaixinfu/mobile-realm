@@ -1,14 +1,7 @@
-import PatySchema from './PartySchema'
+import PartySchema from './PartySchema'
+import UserSchema from './UserSchema'
 
-class Schema {
-    constructor() {
-        this.schemas = [
-            PatySchema,
-        ]
-    }
-    getNewSchemas() {
-        return this.schemas[this.schemas.length - 1]
-    }
+export default {
+    PartySchema,
+    UserSchema
 }
-
-export default Schema

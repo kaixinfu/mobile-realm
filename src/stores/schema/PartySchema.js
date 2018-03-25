@@ -18,9 +18,4 @@ const PatySchema = {
     }
 }
 
-// export default PatySchema
-module.exports = {
-    schema: [PatySchema],
-    schemaVersion: 1,
-    migration: () => {}
-};
+export default PatySchema
