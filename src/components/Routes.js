@@ -28,10 +28,10 @@ export default class App extends Component<Props> {
         super();
         this.login = this.login.bind(this);
     }
-    async login() {
+    login() {
         // this.props.loginStore.init()
-        // console.log('this.props.loginStore.user_name ====> ', this.props.loginStore.init())
-        // await this.props.loginStore.login()
+        console.log('this.props.loginStore.user_name ====> ', this.props.loginStore.user_id)
+        this.props.loginStore.login()
     }
     render() {
         console.log(this.login())

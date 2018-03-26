@@ -11,6 +11,7 @@ import moment from 'moment';
 class LoginStore {
 
   @observable user = new User();
+  @observable user_id = '1'
 
   @action init(){
     console.log('init')
@@ -33,11 +34,13 @@ class LoginStore {
   @action login() {
 
       const user = {
+          serno: genUUID(),
           pk_uuid: 'du892j',
           user_no: 'admin',
-          user_name: '123',
+          user_name: 'kaixin',
           user_pwd: '123',
           phone_number: '137217223456',
+          crt_date: moment().format("YYYY/MM/DD HH:mm:ss")
       }
 
       //持久化到本地数据库

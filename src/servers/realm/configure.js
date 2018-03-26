@@ -44,7 +44,7 @@ function configSchema() {
     }
     const getNewSchemas = schemas[schemas.length - 1];
     const realm = new Realm(getNewSchemas);
-    realm.close();
+    // realm.close();
 }
 
 module.exports = configSchema
