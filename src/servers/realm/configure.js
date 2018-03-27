@@ -4,7 +4,7 @@ import {
     Platform,
 } from 'react-native';
 import Realm from 'realm';
-import DeviceInfo from 'react-native-device-info'
+// import DeviceInfo from 'react-native-device-info'
 
 import _ from 'lodash';
 
@@ -31,7 +31,7 @@ function configSchema() {
     console.log('configSchema ======> ')
 // && DeviceInfo.isEmulator()
     if (__DEV__ && Platform.OS === 'ios') {
-        Realm.defaultPath = '/Users/Shared/realm-data/data.realm'
+        Realm.defaultPath = '/Users/Shared/data/data.realm'
     }
     console.log('==tl Realm.defaultPath', Realm.defaultPath);
     var next = Realm.schemaVersion(Realm.defaultPath);
