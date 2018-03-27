@@ -4,7 +4,7 @@ import Entity from './Entity'
 import {copyProperties} from '../../lib/ComFuncs'
 
 export default class Patry extends Entity {
-    @observable policy_uuid = ''; // 保单UUID
+    @observable policy_uuid = '';
     @observable party_uuid = ''; // 人员编码, 主键
     @observable party_type = ''; // 人员类型,  枚举：PartyType
     @observable name = ''; // 客户姓名
@@ -32,7 +32,6 @@ export default class Patry extends Entity {
         });
         party.partyContacts = partyContacts;
 
-        // 复制险种信息列表
         let partyAddresses = [];
         party.partyAddresses.forEach((realmAddress) => {
             let partyAddress = new PartyAddress();
@@ -41,7 +40,6 @@ export default class Patry extends Entity {
         });
         party.partyAddresses = partyAddresses;
 
-        // 复制险种信息列表
         let policyRisks = [];
         party.policyRisks.forEach((realmRisk) => {
             let policyRisk = new PolicyRisk();
@@ -50,7 +48,6 @@ export default class Patry extends Entity {
         });
         party.policyRisks = policyRisks;
 
-        // 复制影像信息列表
         let policyImages = [];
         party.policyImages.forEach((realmImage) => {
             let policyImage = new PolicyImage();
