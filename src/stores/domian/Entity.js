@@ -9,13 +9,13 @@ import moment from 'moment'
 export default class Entity {
   @observable serno = '';
   //创建日期
-  @observable crt_date = ''; // 05.创建日期
+  @observable crt_date = '';
   //修改日期
-  @observable mdf_date = ''; // 06.修改日期
-  //创建操作员
-  @observable crt_user = ''; // 07.创建操作员
-  //修改操作员
-  @observable mdf_user = ''; // 08.修改
+  @observable mdf_date = '';
+  //创建人
+  @observable crt_user = '';
+  //修改人
+  @observable mdf_user = '';
 
   constructor(){
     this.serno = genUUID()

@@ -4,11 +4,12 @@ import realm from '../../servers/realm';
 import global from '../Global'
 import _ from 'lodash'
 export default class User extends Entity {
-    // 用户主键
-    @observable pk_uuid = '';
+    @observable user_uuid = '';
+    // 用户类型
+    @observable user_type = '';
     // 登录账号
     @observable user_no = '';
-    // 操作员姓名
+    // 姓名
     @observable user_name = '';
     // 密码
     @observable user_pwd = '';
@@ -16,7 +17,7 @@ export default class User extends Entity {
     @observable phone_number = '';
     constructor() {
         super();
-        this.policy_uuid = this.serno;
+        this.user_uuid = this.serno;
     }
 
     static create(user) {

@@ -2,7 +2,6 @@ const PatySchema = {
     name: 'Party',
     primaryKey: 'party_uuid',
     properties: {
-        policy_uuid: 'string',
         party_uuid: 'string',
         party_type: 'string',
         name: 'string',

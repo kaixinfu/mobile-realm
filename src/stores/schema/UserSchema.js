@@ -1,8 +1,9 @@
 const UserSchema = {
     name: 'User',
-    primaryKey: 'pk_uuid',
+    primaryKey: 'user_uuid',
     properties: {
-        pk_uuid:'string',
+        user_uuid:'string',
+        user_type:'string',
         user_no:'string',
         user_name:'string',
         user_pwd:'string',

@@ -13,6 +13,8 @@ import {
 } from 'react-native';
 import { observer, inject } from 'mobx-react/native'
 
+import Login from './user/Login';
+
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' +
     'Cmd+D or shake for dev menu',
@@ -26,26 +28,11 @@ type Props = {};
 export default class App extends Component<Props> {
     constructor() {
         super();
-        this.login = this.login.bind(this);
-    }
-    login() {
-        // this.props.loginStore.init()
-        console.log('this.props.loginStore.user_name ====> ', this.props.loginStore.user_id)
-        this.props.loginStore.login()
     }
     render() {
-        console.log(this.login())
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Welcome to React Native!!
-                </Text>
-                <Text style={styles.instructions}>
-                    To get started, edit App.js
-                </Text>
-                <Text style={styles.instructions}>
-                    {instructions}
-                </Text>
+                <Login />
             </View>
         );
     }

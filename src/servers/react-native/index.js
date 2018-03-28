@@ -6,7 +6,7 @@ import {
     View
 } from 'react-native';
 import {observer, Provider} from 'mobx-react/native';
-import Routes from '../../components/Routes';
+import Routes from '../../container/Routes';
 // import getAllStores  from '../mobx'
 import configSchema from "../realm/configure";
 import {stores} from '../../stores/view'

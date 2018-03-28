@@ -11,18 +11,52 @@ import moment from 'moment';
 class LoginStore {
 
   @observable user = new User();
-  @observable user_id = '1'
 
   @action init(){
-    console.log('init')
-    let loadedUsers = realm.objects('User')
-    if(!_.isEmpty(loadedUsers)&&loadedUsers[0].remember_me==='Y'){
-      this.user = {...loadedUsers[0]}
-      this.user.user_pwd = ''
+    console.log('User =====> init')
+    let localUser = realm.objects('User')
+    if(!_.isEmpty(localUser)) {
+      this.user = {...localUser[0]};
+      this.user_pwd = ''
     }
   }
 
-  @action reset(){
+  @action
+  setUserNo = (text) => {
+    this.user.user_no = text
+  }
+  @computed
+  get getUserNo() {
+    return this.user.user_no
+  }
+  @action
+  setUserPwd = (text) => {
+    this.user.user_pwd = text
+  }
+  @computed
+  get getUserPwd() {
+    return this.user.user_pwd
+  }
+  @computed
+  get checkUser() {
+      const result = {
+          flag: false,
+          message: ''
+      }
+      if (_.isEmpty(this.user.user_no)) {
+          result.flag = true;
+          result.message = '用户账号为空，请填写!'
+          return result
+      }
+      if (_.isEmpty(this.user.user_pwd)) {
+          result.flag = true;
+          result.message = '用户密码为空，请填写!'
+          return result
+      }
+      return result
+  }
+
+  @action clear(){
     this.user.user_no = '';
     this.user.user_pwd = '';
   }
@@ -31,14 +65,15 @@ class LoginStore {
       return this.user.user_no
   }
 
-  @action login() {
-
+  @action
+  login = () => {
       const user = {
           serno: genUUID(),
-          pk_uuid: 'du892j',
-          user_no: 'admin',
-          user_name: 'kaixin',
-          user_pwd: '123',
+          user_uuid: 'du892j',
+          user_type: 'common',
+          user_no: this.user.user_no,
+          user_name: '😊',
+          user_pwd: this.user.user_pwd,
           phone_number: '137217223456',
           crt_date: moment().format("YYYY/MM/DD HH:mm:ss")
       }
