@@ -2,9 +2,12 @@
 
 ## Contains
 
-- [x] [realm](https://realm.io)
 - [x] [mobx](https://mobx.js.org/)
+- [x] [realm](https://realm.io)
+- [x] [native-base](http://nativebase.io/docs/v0.4.6/components)
+- [x] [antd-mobile](https://mobile.ant.design/components/)
 - [x] [react-native](http://reactnative.cn/)
+- [x] [react-native-router-flux](https://www.cnblogs.com/lemonzwt/p/8182345.html)
 
 ## Install
 

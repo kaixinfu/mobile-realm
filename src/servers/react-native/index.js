@@ -18,6 +18,7 @@ export default class ReactApp extends Component<Props> {
         configSchema()
     }
     render() {
+        console.disableYellowBox = true
         return (
             <Provider {...stores}>
                 <Routes />
