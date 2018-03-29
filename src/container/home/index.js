@@ -5,16 +5,23 @@ import {
     Text,
     View
 } from 'react-native';
+import {Container, InputGroup, Input, Icon, Item, Button} from 'native-base';
+import { observer, inject } from 'mobx-react/native';
+import { Actions } from 'react-native-router-flux';
 
 type Props = {};
-export default class Find extends Component<Props> {
+// @inject("routerActions")
+@observer
+export default class Home extends Component<Props> {
     constructor() {
         super();
     }
     render() {
         return (
             <View style={styles.container}>
-                <Text>home</Text>
+                <Button onPress={() => Actions.test()}>
+                    <Text>home</Text>
+                </Button>
             </View>
         )
     }

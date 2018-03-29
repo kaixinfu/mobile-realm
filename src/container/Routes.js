@@ -14,6 +14,9 @@ export default class Routes extends Component {
             <Router>
                 <Scene key="root" hideNavBar>
                     {require("./scene/TabBar")}
+                    {require("./scene/Home")}
+                    {require("./scene/Find")}
+                    {require("./scene/Main")}
                 </Scene>
             </Router>
         );
