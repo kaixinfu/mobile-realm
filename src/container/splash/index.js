@@ -7,14 +7,17 @@ import {
 } from 'react-native';
 import {Container, InputGroup, Input, Icon, Item, Button} from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import { inject, observer } from 'mobx-react/native';
 
 type Props = {};
+@inject("splashStore")
+@observer
 export default class Splash extends Component<Props> {
     constructor() {
         super();
     }
     componentDidMount() {
-        setTimeout(() => Actions.login(), 1000)
+        this.props.splashStore.checkLogin();
     }
     render() {
         return (

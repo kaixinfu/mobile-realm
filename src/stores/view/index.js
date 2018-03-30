@@ -1,7 +1,9 @@
-import loginStore from './loginStore'
-import SignStore from './SignStore'
+import loginStore from './loginStore';
+import signStore from './signStore';
+import splashStore from './splashStore'
 
 export let stores = {
     loginStore,
-    SignStore
+    signStore,
+    splashStore
 }

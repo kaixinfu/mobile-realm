@@ -48,4 +48,4 @@ class SignStore {
   }
 }
 
-export let signStore = new SignStore();
+export default new SignStore();
