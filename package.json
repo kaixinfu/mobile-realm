@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "antd-mobile": "^2.1.8",
+    "axios": "^0.18.0",
     "lodash": "^4.17.5",
     "mobx": "^4.1.0",
     "mobx-react": "^5.0.0",
