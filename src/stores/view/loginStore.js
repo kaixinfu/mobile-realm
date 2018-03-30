@@ -1,8 +1,8 @@
 'use strict';
 
-import { observable, computed,action } from 'mobx'
-import _ from 'lodash'
-// import {Actions} from 'react-native-router-flux'
+import { observable, computed,action } from 'mobx';
+import _ from 'lodash';
+import {Actions} from 'react-native-router-flux';
 import realm from '../../servers/realm';
 import { User } from '../domain';
 import {genUUID} from '../../lib/ComFuncs';
@@ -84,6 +84,7 @@ class LoginStore {
           User.deleteAll()
           User.create(user)
       })
+      Actions.tab()
   }
 }
 
