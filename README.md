@@ -37,35 +37,35 @@
 
 > android: `react-native run-android`
 
-## 项目目录结构
+## 项目结构
 <pre>
 .
-├── README.md                    //项目相关简介
+├── README.md                    // 项目相关简介
 ├── _tests_                      // 自动化测试文件
 ├── android                      // 项目android原生文件
 ├── ios                          // 项目ios原生文件
 ├── node_modules                 // 项目依赖
 ├── src                          // 项目生产目录
 │   ├── components               // 项目通用组件
-│   ├── container                // 组件容器
+│   ├── container                // UI组件容器
 │   │    └── find                // 发现相关业务组件
 │   │    └── home                // 首页相关业务组件
 │   │    └── main                // 我的相关业务组件
 │   │    └── scene               // 配置各个路由组件
 │   │    └── user                // 用户登录、注册、注销等相关业务组件
-│   │    └── Routes              // 用户登录、注册、注销等相关业务组件
+│   │    └── Routes              // 管理全局路由组件
 │   ├── images                   // 存放图片文件
 │   ├── lib                      // 公共类(校验、枚举、公用方法)
 │   ├── servers                  // 本地所有状态
-│   │    └── api                 // 调用接口文件
-│   │    └── mobx                // 发现相关业务组件
-│   │    └── react-native        // 首页相关业务组件
-│   │    └── realm               // 我的相关业务组件
-│   ├── stores                   // 各种页面
+│   │    └── api                 // 接口类相关文件
+│   │    └── mobx                // 导出全部状态
+│   │    └── react-native        // 项目入口文件
+│   │    └── realm               // 初始化realm以及操作realm方法文件
+│   ├── stores                   // 各种状态仓库文件
 │   │    └── domain              // 操作各个表的方法
 │   │    └── schema              // 定义各个表的结构
-│   │    └── view                // 各组件数据状态
-│   │    └── Global              // 全局状态
+│   │    └── view                // 各UI组件数据状态
+│   │    └── Global              // 全局管理状态
 ├── index.js                     // 注册项目的入口文件
 ├── package.json                 // 项目配置文件
 </pre>
