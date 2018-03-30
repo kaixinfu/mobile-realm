@@ -3,9 +3,10 @@ import {observable} from 'mobx';
 import realm from '../../servers/realm';
 import global from '../Global'
 import _ from 'lodash'
+
 export default class User extends Entity {
     @observable user_uuid = '';
-    // 用户类型
+    // 是否登录
     @observable user_type = '';
     // 登录账号
     @observable user_no = '';
@@ -13,8 +14,11 @@ export default class User extends Entity {
     @observable user_name = '';
     // 密码
     @observable user_pwd = '';
+    // 年龄
+    @observable user_age = '';
     // 电话号码
     @observable phone_number = '';
+
     constructor() {
         super();
         this.user_uuid = this.serno;
@@ -24,8 +28,8 @@ export default class User extends Entity {
         realm.create('User', realm.cascadingCopy(user), true)
     }
 
-    static deleteAll(){
-        let loadedUsers = realm.objects('User')
-        realm.delete(loadedUsers)
+    static deleteUser() {
+        const localUser = realm.objects('User')
+        realm.delete(localUser)
     }
 }

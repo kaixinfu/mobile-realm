@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
@@ -25,11 +25,11 @@ export default class HeadImage extends Component<Props> {
                 {
                     !!!url ?
                         <Image
-                        style={{width: _size, height: _size, borderRadius: _size / 2}}
-                        source={require('../images/head.jpg')} /> :
+                            style={{width: _size, height: _size, borderRadius: _size / 2}}
+                            source={require('../images/head.jpg')}/> :
                         <Image
-                        style={{width: _size, height: _size, borderRadius: _size / 2}}
-                        source={{uri: url}} />
+                            style={{width: _size, height: _size, borderRadius: _size / 2}}
+                            source={{uri: url}}/>
                 }
             </View>
         );

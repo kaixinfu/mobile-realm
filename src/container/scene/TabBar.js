@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Scene,
     Actions,
@@ -31,7 +31,7 @@ const TabBar = (
         }}//单个选项卡的样式
         swipeEnabled={false}//是否可以滑动选项卡
         headerMode='screen'// 页面切换方式
-        >
+    >
         <Scene
             title={'首页'}//要显示在导航栏中心的文本
             key={'home'}//将用于标识页面，例如Actions.name(params)。必须是独一无二的

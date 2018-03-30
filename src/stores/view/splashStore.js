@@ -1,25 +1,39 @@
 'use strict';
 
-import { observable, computed,action } from 'mobx'
+import {observable, computed, action} from 'mobx'
 import _ from 'lodash'
 import {Actions} from 'react-native-router-flux'
 import realm from '../../servers/realm';
-import { User } from '../domain';
-import {genUUID} from '../../lib/ComFuncs';
+import {User} from '../domain';
 
 class SplashStore {
+    @observable user = {};
 
-  @action
-  checkLogin() {
-      const localUser = realm.objects('User')[0];
-      if (_.isEmpty(localUser)) {
-          setTimeout(() => Actions.login(), 1000);
-          return
-      }
-      if (localUser.user_no) {
-          Actions.tab()
-      }
-  }
+    @action
+    init() {
+        this.clear();
+        const localUser = realm.objects('User')[0];
+        if (!_.isEmpty(localUser)) {
+            this.user = {...localUser};
+        }
+    }
+
+    @action
+    checkLogin() {
+        if (_.isEmpty(this.user) || _.isEmpty(this.user.user_no) || this.user.user_type !== 'Y') {
+            setTimeout(() => Actions.login(), 300);
+            return
+        }
+        ;
+        if (this.user.user_no && this.user.user_type === 'Y') {
+            Actions.tab();
+        }
+    }
+
+    @action
+    clear() {
+        this.user = observable({});
+    }
 }
 
 export default new SplashStore();

@@ -12,40 +12,46 @@ import {
     Alert
 } from 'react-native';
 import {Container, InputGroup, Input, Icon, Item, Button} from 'native-base';
-import {observer, inject} from 'mobx-react/native';
-import {Actions} from 'react-native-router-flux';
+import {observer, inject} from 'mobx-react/native'
 
 import HeadImage from '../../components/HeadImage'
 
 type Props = {};
-@inject("loginStore")
+@inject("registerStore")
 @observer
-export default class Login extends Component<Props> {
-    componentWillMount() {
-        this.props.loginStore.init();
+export default class Register extends Component<Props> {
+
+    componentDidMount() {
+        this.props.registerStore.init()
     }
 
     onUserNoChange = (text) => {
-        this.props.loginStore.setUserNo(text);
+        this.props.registerStore.setUserNo(text);
     }
     onUserPwdChange = (text) => {
-        this.props.loginStore.setUserPwd(text)
+        this.props.registerStore.setUserPwd(text)
     }
-    login = () => {
-        const {checkUser, login} = this.props.loginStore
-        const checkReult = checkUser();
-        if (checkReult.flag) {
-            Alert.alert('提示', checkReult.message);
-            return
-        }
-        login()
+    onUserNameChange = (text) => {
+        this.props.registerStore.setUserName(text);
+    }
+    onUserAgeChange = (text) => {
+        this.props.registerStore.setUserAge(text)
+    }
+    onUserPhoneChange = (text) => {
+        this.props.registerStore.setUserPhone(text)
     }
     register = () => {
-        Actions.register()
+        const {checkUser, register} = this.props.registerStore;
+        if (checkUser.flag) {
+            Alert.alert('提示', checkUser.message);
+            return
+        }
+        ;
+        register()
     }
 
     render() {
-        const {getUserNo, getUserPwd} = this.props.loginStore
+        const {getUserNo, getUserPwd, getUserName, getUserAge, getUserPhone} = this.props.registerStore
         return (
             <Container style={styles.container}>
                 <View style={styles.imagesStyle}>
@@ -66,9 +72,27 @@ export default class Login extends Component<Props> {
                                    onChangeText={(text) => this.onUserPwdChange(text)} secureTextEntry maxLength={6}/>
                         </InputGroup>
                     </Item>
-                    <Button onPress={this.login} block info style={styles.loginStyle}>
-                        <Text style={styles.textStyle}>登录</Text>
-                    </Button>
+                    <Item>
+                        <InputGroup>
+                            <Icon name="md-person-add"/>
+                            <Input placeholder="请输入姓名" value={getUserName}
+                                   onChangeText={(text) => this.onUserNameChange(text)} maxLength={6}/>
+                        </InputGroup>
+                    </Item>
+                    <Item>
+                        <InputGroup>
+                            <Icon name="ios-mail-open-outline"/>
+                            <Input placeholder="请输入年龄" value={getUserAge}
+                                   onChangeText={(text) => this.onUserAgeChange(text)} maxLength={3}/>
+                        </InputGroup>
+                    </Item>
+                    <Item>
+                        <InputGroup>
+                            <Icon name="ios-phone-portrait"/>
+                            <Input placeholder="请输入手机号码" value={getUserPhone}
+                                   onChangeText={(text) => this.onUserPhoneChange(text)} maxLength={11}/>
+                        </InputGroup>
+                    </Item>
                     <Button onPress={this.register} block info style={styles.loginStyle}>
                         <Text style={styles.textStyle}>注册</Text>
                     </Button>

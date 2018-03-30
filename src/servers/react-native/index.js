@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
     StyleSheet,
@@ -17,11 +17,12 @@ export default class ReactApp extends Component<Props> {
         super();
         configSchema()
     }
+
     render() {
         console.disableYellowBox = true
         return (
             <Provider {...stores}>
-                <Routes />
+                <Routes/>
             </Provider>
         )
     }

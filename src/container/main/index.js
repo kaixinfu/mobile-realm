@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
     StyleSheet,
@@ -11,6 +11,7 @@ export default class Main extends Component<Props> {
     constructor() {
         super();
     }
+
     render() {
         return (
             <View style={styles.container}>
@@ -22,8 +23,8 @@ export default class Main extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent:'center',
-        alignItems:'center',
-        alignSelf:'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
     }
 });

@@ -1,5 +1,5 @@
 'use strict';
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
 } from 'react-native';
@@ -13,7 +13,8 @@ import * as storeSchema from '../../stores/schema';
 const schema = _.values(storeSchema.default)
 
 const schemas = [
-    {schema: schema, schemaVersion: 1, migration: (oldRealm, newRealm) => {
+    {
+        schema: schema, schemaVersion: 1, migration: (oldRealm, newRealm) => {
             // only apply this change if upgrading to schemaVersion 1
             if (oldRealm.schemaVersion < 1) {
                 let oldObjects = oldRealm.objects('Patry');
@@ -24,7 +25,8 @@ const schemas = [
                     newObjects[i].feature = oldObjects[i].feature.toString()
                 }
             }
-        }},
+        }
+    },
 ]
 
 function configSchema() {

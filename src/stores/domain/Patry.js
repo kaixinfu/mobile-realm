@@ -17,6 +17,7 @@ export default class Patry extends Entity {
     constructor() {
         super();
     }
+
     static create(party) {
         realm.create('Party', realm.cascadingCopy(party), true);
     }

@@ -1,9 +1,9 @@
+import splashStore from './splashStore';
 import loginStore from './loginStore';
-import signStore from './signStore';
-import splashStore from './splashStore'
+import registerStore from './registerStore'
 
 export let stores = {
+    splashStore,
     loginStore,
-    signStore,
-    splashStore
+    registerStore
 }

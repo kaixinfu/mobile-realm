@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { Dimensions, AsyncStorage, PixelRatio, Platform, Alert } from 'react-native';
-import { observable, computed } from 'mobx';
-let { height, width } = Dimensions.get('window');
+import React, {Component} from 'react';
+import {Dimensions, AsyncStorage, PixelRatio, Platform, Alert} from 'react-native';
+import {observable, computed} from 'mobx';
+
+let {height, width} = Dimensions.get('window');
 
 class Global {
     // 系统是iOS
