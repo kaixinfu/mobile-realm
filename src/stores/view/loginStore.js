@@ -87,8 +87,7 @@ class LoginStore {
         this.user.user_type = 'Y';
         const user = this.user;
         realm.write(() => {
-            User.deleteUser();
-            User.create(user)
+            User.update(user)
         });
         Actions.tab()
     }

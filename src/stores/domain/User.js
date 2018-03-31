@@ -1,5 +1,6 @@
 import Entity from './Entity';
 import {observable} from 'mobx';
+import moment from 'moment';
 import realm from '../../servers/realm';
 import global from '../Global'
 import _ from 'lodash'
@@ -18,6 +19,8 @@ export default class User extends Entity {
     @observable user_age = '';
     // 电话号码
     @observable phone_number = '';
+    //创建日期
+    @observable crt_date = ''
 
     constructor() {
         super();
@@ -26,6 +29,11 @@ export default class User extends Entity {
 
     static create(user) {
         realm.create('User', realm.cascadingCopy(user), true)
+    }
+
+    static update(user) {
+        user.crt_date = moment().format("YYYY/MM/DD HH:mm:ss");
+        realm.create('User', user, true)
     }
 
     static deleteUser() {
