@@ -30,12 +30,12 @@ const schemas = [
 ]
 
 function configSchema() {
-    console.log('configSchema ======> ')
+    console.log('初始化 ================> ')
 // && DeviceInfo.isEmulator()
     if (__DEV__ && Platform.OS === 'ios') {
         Realm.defaultPath = '/Users/Shared/data/data.realm'
     }
-    console.log('==tl Realm.defaultPath', Realm.defaultPath);
+    console.log('Realm.defaultPath：', Realm.defaultPath);
     var next = Realm.schemaVersion(Realm.defaultPath);
     if (next > 0) {
         while (next < schemas.length) {

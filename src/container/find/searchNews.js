@@ -34,6 +34,7 @@ export default class SearchNews extends Component<Props> {
     }
 
     render() {
+        console.log('newsInfo', this.props.searchNewsStore.newsInfo)
         return (
             <View style={styles.container}>
                 {this.renderHeader()}

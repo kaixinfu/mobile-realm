@@ -35,5 +35,6 @@
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+//  "proxy": "http://is.snssdk.com/"
 }
