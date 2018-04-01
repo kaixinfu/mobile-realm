@@ -21,7 +21,7 @@ export default class Routes extends Component {
                     <Stack key="user" hideNavBar headerMode={'screen'}>
                         {require("./scene/User")}
                     </Stack>
-                    <Stack key="root" hideNavBar headerMode={'screen'}>
+                    <Stack key="root" hideNavBar>
                         {require("./scene/TabBar")}
                         {require("./scene/Home")}
                         {require("./scene/Find")}

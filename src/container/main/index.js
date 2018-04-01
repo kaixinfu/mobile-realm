@@ -6,6 +6,8 @@ import {
     View,
     Image
 } from 'react-native';
+import {SegmentedControl, WingBlank, WhiteSpace,Result} from 'antd-mobile';
+import {Container, InputGroup, Input, Icon, Item, Button} from 'native-base';
 
 type Props = {};
 export default class Main extends Component<Props> {
@@ -16,15 +18,12 @@ export default class Main extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
-                <Image style={styles.proImage}
-                       source={require('../../images/head.jpg')}/>
-                <Image style={styles.proImage}
-                       source={require('../../images/1.png')}/>
-                <Image
-                    style={{width: 50, height: 50}}
-                    source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}
+                <Result
+                    img={<Image style={styles.imageStyle}
+                                source={require('../../images/head.jpg')}/>}
+                    title="26岁"
+                    message={<View><Text>北京成为科技</Text></View>}
                 />
-                <Image style={styles.proImage} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}} />
             </View>
         )
     }
@@ -36,8 +35,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
     },
-    proImage: {
-        width: 40,
-        height: 40
+    imageStyle: {
+        width: 50,
+        height: 50,
+        borderRadius: 25
     }
 });

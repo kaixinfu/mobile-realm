@@ -6,10 +6,13 @@ import {
     Stack,
     Tabs,
 } from 'react-native-router-flux';
+import {Container, InputGroup, Input, Icon, Item, Button} from 'native-base';
 
 import Home from '../home';
 import Find from '../find';
 import Main from '../main';
+
+import TabIcon from '../../components/TabBarIcon'
 
 const TabBar = (
     <Tabs
@@ -29,8 +32,11 @@ const TabBar = (
             justifyContent: 'center',
             alignItems: 'center',
         }}//单个选项卡的样式
-        swipeEnabled={false}//是否可以滑动选项卡
+        // swipeEnabled={false}//是否可以滑动选项卡
         headerMode='screen'// 页面切换方式
+        showLabel={false}//是否显示标签栏名字
+        showIcon={true}//是否显示图标
+        initial={false}
     >
         <Scene
             title={'首页'}//要显示在导航栏中心的文本
@@ -38,18 +44,21 @@ const TabBar = (
             component={Home}//要显示的组件，定义嵌套时不需要Scene
             hideNavBar//隐藏导航栏
             initial//设置为true后，会默认显示该页面
+            icon={TabIcon}
         />
         <Scene
             title={'发现'}
             key={'find'}
             component={Find}
             hideNavBar
+            icon={TabIcon}
         />
         <Scene
             title={'我的'}
             key={'main'}
             component={Main}
             hideNavBar
+            icon={TabIcon}
         />
     </Tabs>
 );
