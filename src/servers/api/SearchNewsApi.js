@@ -5,8 +5,7 @@ export default class SearchNewsApi extends BaseApi {
         super()
     };
     async fetchNews(url) {
-        const res = await this.axios.get('?category=' + url);
-        console.log('SearchNewsApi', res)
+        const res = await this.axios.get('?count=5&&category=' + url);
         return res
     };
 }

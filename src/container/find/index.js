@@ -19,7 +19,7 @@ export default class Find extends Component<Props> {
     };
 
     componentDidMount() {
-        this.props.searchNewsStore.init();
+        this.props.searchNewsStore.init('init');
     }
 
     render() {

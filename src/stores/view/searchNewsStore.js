@@ -3,8 +3,6 @@
 import {observable, computed, action} from 'mobx';
 import _ from 'lodash';
 import {Actions} from 'react-native-router-flux';
-import realm from '../../servers/realm';
-import {User} from '../domain';
 import api from '../../servers/api';
 import {newsOptions, findSelectIndex, findSelectUrl} from '../../lib/NewsType'
 
@@ -13,25 +11,51 @@ class SearchNewsStore {
     @observable selectNews = [];
     //分段器被选中索引
     @observable selectState = 0;
-    //被选中索引的数据
-    @observable newsInfo = [];
+    //左边列表的数据
+    @observable leftNewsInfo = [];
+    //中间列表的数据
+    @observable middleNewsInfo = [];
+    //右边列表的数据
+    @observable rightNewsInfo = [];
+    //是否正在加载
+    @observable refreshing = false;
 
     @action
-    init = () => {
+    init = (type) => {
         this.clear();
-        this.fetchNews(this.selectState)
+        this.fetchNews(type)
     }
 
     @action
-    async fetchNews(id) {
-        const url = findSelectUrl(id).url;
+    async fetchNews(type) {
+        const url = findSelectUrl(this.selectState).url;
+        if ('init' === type && !_.isEmpty(this.newsInfo)) return;
         let res = await api.searchNewsApi.fetchNews(url);
         if ("success" === res.message) {
-            res.data.forEach((item, key) => {
-                this.newsInfo[key] = item
-            })
+            if ('init' === type) {
+                res.data.forEach((item, key) => {
+                    this.newsInfo[key] = JSON.parse(item.content);
+                })
+            } else if ('top' === type) {
+                this.refreshing = false;
+                this.newsInfo.unshift(...res.data.map(item => JSON.parse(item.content)));
+            } else if ('end' === type) {
+                this.newsInfo.push(...res.data.map(item => JSON.parse(item.content)));
+            }
         }
-        console.log('SearchNewsStore res ===========> ', res)
+    }
+
+    @computed
+    get newsInfo() {
+        if (this.selectState === 0) {
+            return this.leftNewsInfo
+        }
+        if (this.selectState === 1) {
+            return this.middleNewsInfo
+        }
+        if (this.selectState === 2) {
+            return this.rightNewsInfo
+        }
     }
 
     @action
@@ -49,7 +73,9 @@ class SearchNewsStore {
             }
         });
         this.selectState = 0;
-        this.newsInfo = observable([])
+        this.leftNewsInfo = observable([]);
+        this.middleNewsInfo = observable([]);
+        this.rightNewsInfo = observable([])
     }
 }
 
