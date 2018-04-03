@@ -13,6 +13,7 @@ class SplashStore {
     init() {
         this.clear();
         const localUser = realm.objects('User')[0];
+        console.log('SplashStore ==========> ', localUser)
         if (!_.isEmpty(localUser)) {
             this.user = {...localUser};
         }
@@ -24,7 +25,6 @@ class SplashStore {
             setTimeout(() => Actions.login(), 300);
             return
         }
-        ;
         if (this.user.user_no && this.user.user_type === 'Y') {
             Actions.tab();
         }

@@ -1,7 +1,11 @@
-import PartySchema from './PartySchema'
-import UserSchema from './UserSchema'
+import PartySchema from './PartySchema';
+import UserSchema from './UserSchema';
+import LocalTableSchema from './LocalTableSchema';
+import SwiperImageSchema from './SwiperImageSchema'
 
 export default {
     PartySchema,
-    UserSchema
+    UserSchema,
+    LocalTableSchema,
+    SwiperImageSchema
 }

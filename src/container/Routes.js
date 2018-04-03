@@ -7,14 +7,15 @@ import {
     Stack,
     Scene,
     Router,
-    Modal
+    Modal,
+    Lightbox
 } from 'react-native-router-flux';
 
 export default class Routes extends Component {
     render() {
         return (
             <Router>
-                <Modal>
+                <Scene>
                     <Stack key="begin" hideNavBar headerMode={'screen'}>
                         {require("./scene/Splash")}
                     </Stack>
@@ -27,7 +28,7 @@ export default class Routes extends Component {
                         {require("./scene/Find")}
                         {require("./scene/Main")}
                     </Stack>
-                </Modal>
+                </Scene>
             </Router>
         );
     }

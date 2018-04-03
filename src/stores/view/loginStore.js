@@ -4,7 +4,7 @@ import {observable, computed, action} from 'mobx';
 import _ from 'lodash';
 import {Actions} from 'react-native-router-flux';
 import realm from '../../servers/realm';
-import {User} from '../domain';
+import {User, LocalTable} from '../domain';
 
 class LoginStore {
 
@@ -15,6 +15,7 @@ class LoginStore {
     @action init() {
         this.clear();
         const localUser = realm.objects('User')[0];
+        console.log('LoginStore........init ==========> ', localUser)
         if (!_.isEmpty(localUser)) {
             this.user = {...localUser};
             this.user_no = this.user.user_no;
@@ -44,6 +45,7 @@ class LoginStore {
     }
 
     checkUser = () => {
+        console.log('checkUser ==========> ', this.user)
         const result = {
             flag: false,
             message: ''
@@ -67,6 +69,7 @@ class LoginStore {
         }
         ;
         if (this.user.user_pwd !== this.user_pwd) {
+            console.log('用户密码不正确 ==========> ', this.user, user_pwd)
             result.flag = true;
             result.message = '用户密码不正确，请核对密码是否正确!'
             this.user_pwd = '';
@@ -84,6 +87,7 @@ class LoginStore {
 
     @action
     login = () => {
+        // LocalTable.syncLocalTables()
         this.user.user_type = 'Y';
         const user = this.user;
         realm.write(() => {

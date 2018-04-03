@@ -1,0 +1,21 @@
+{
+  "version":"0.01",
+  "data":[
+    {
+      "id": "0",
+      "url": "http://liukaixin.cn/mobile-realm/swiper/0.jpg"
+    },
+    {
+      "id": "1",
+      "url": "http://liukaixin.cn/mobile-realm/swiper/2.jpg"
+    },
+    {
+      "id": "3",
+      "url": "http://liukaixin.cn/mobile-realm/swiper/3.jpg"
+    },
+    {
+      "id": "4",
+      "url": "http://liukaixin.cn/mobile-realm/swiper/4.jpg"
+    },
+  ]
+}
