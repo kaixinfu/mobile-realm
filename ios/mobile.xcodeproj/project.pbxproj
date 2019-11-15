@@ -287,14 +287,14 @@
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 139D7ECE1E25DB7D00323FB7;
-			remoteInfo = "third-party";
+			remoteInfo = "third-person";
 		};
 		AD0B0115206F97B3005ED4A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3D383D3C1EBD27B6005632C8;
-			remoteInfo = "third-party-tvOS";
+			remoteInfo = "third-person-tvOS";
 		};
 		AD0B0117206F97B3005ED4A0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -563,8 +563,8 @@
 				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
 				AD0B0110206F97B3005ED4A0 /* libjsinspector.a */,
 				AD0B0112206F97B3005ED4A0 /* libjsinspector-tvOS.a */,
-				AD0B0114206F97B3005ED4A0 /* libthird-party.a */,
-				AD0B0116206F97B3005ED4A0 /* libthird-party.a */,
+				AD0B0114206F97B3005ED4A0 /* libthird-person.a */,
+				AD0B0116206F97B3005ED4A0 /* libthird-person.a */,
 				AD0B0118206F97B3005ED4A0 /* libdouble-conversion.a */,
 				AD0B011A206F97B3005ED4A0 /* libdouble-conversion.a */,
 				AD0B011C206F97B3005ED4A0 /* libprivatedata.a */,
@@ -1103,17 +1103,17 @@
 			remoteRef = AD0B0111206F97B3005ED4A0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AD0B0114206F97B3005ED4A0 /* libthird-party.a */ = {
+		AD0B0114206F97B3005ED4A0 /* libthird-person.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libthird-party.a";
+			path = "libthird-person.a";
 			remoteRef = AD0B0113206F97B3005ED4A0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		AD0B0116206F97B3005ED4A0 /* libthird-party.a */ = {
+		AD0B0116206F97B3005ED4A0 /* libthird-person.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libthird-party.a";
+			path = "libthird-person.a";
 			remoteRef = AD0B0115206F97B3005ED4A0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

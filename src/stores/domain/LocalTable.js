@@ -1,4 +1,4 @@
-import Entity from './Entity';
+import Base from './Base';
 import {observable} from 'mobx';
 import moment from 'moment';
 import realm from '../../servers/realm';
@@ -6,7 +6,7 @@ import swiperImages from '../../../data/swiper-images.json';
 import global from '../Global'
 import _ from 'lodash'
 
-export default class LocalTable extends Entity {
+export default class LocalTable extends Base {
 
     static create(localTable) {
         localTable.crt_date = moment().format("YYYY/MM/DD HH:mm:ss");

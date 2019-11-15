@@ -1,10 +1,10 @@
-import Patry from './Patry';
+import Person from './Person';
 import User from './User';
 import LocalTable from './LocalTable';
 import SwiperImage from './SwiperImage'
 
 module.exports = {
-    Patry,
+    Person,
     User,
     LocalTable,
     SwiperImage

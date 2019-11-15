@@ -1,10 +1,10 @@
-import PartySchema from './PartySchema';
+import PersonSchema from './PersonSchema';
 import UserSchema from './UserSchema';
 import LocalTableSchema from './LocalTableSchema';
 import SwiperImageSchema from './SwiperImageSchema'
 
 export default {
-    PartySchema,
+    PersonSchema,
     UserSchema,
     LocalTableSchema,
     SwiperImageSchema

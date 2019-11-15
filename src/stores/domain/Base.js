@@ -6,7 +6,7 @@ import moment from 'moment'
 /**
  * 实体基类
  */
-export default class Entity {
+export default class Base {
     @observable serno = '';
     //创建日期
     @observable crt_date = '';

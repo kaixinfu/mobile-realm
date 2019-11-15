@@ -1,12 +1,12 @@
 import {observable} from 'mobx';
 import realm from '../../servers/realm';
-import Entity from './Entity'
+import Base from './Base'
 import {copyProperties} from '../../lib/ComFuncs'
 
-export default class Patry extends Entity {
-    @observable party_uuid = '';
+export default class Person extends Base {
+    @observable person_uuid = '';
     // 人员类型
-    @observable party_type = '';
+    @observable person_type = '';
     // 姓名
     @observable name = '';
     // 性别
@@ -18,7 +18,7 @@ export default class Patry extends Entity {
         super();
     }
 
-    static create(party) {
-        realm.create('Party', realm.cascadingCopy(party), true);
+    static create(person) {
+        realm.create('Person', realm.cascadingCopy(person), true);
     }
 }

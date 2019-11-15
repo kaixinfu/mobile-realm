@@ -1,9 +1,9 @@
 import {observable} from 'mobx';
 import realm from '../../servers/realm';
-import Entity from './Entity'
+import Base from './Base'
 import {copyProperties} from '../../lib/ComFuncs'
 
-export default class SwiperImage extends Entity {
+export default class SwiperImage extends Base {
     @observable id = '';
     // 图片地址
     @observable url = '';

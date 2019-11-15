@@ -17,8 +17,8 @@ const schemas = [
         schema: schema, schemaVersion: 1, migration: (oldRealm, newRealm) => {
             // only apply this change if upgrading to schemaVersion 1
             if (oldRealm.schemaVersion < 1) {
-                let oldObjects = oldRealm.objects('Patry');
-                let newObjects = newRealm.objects('Patry');
+                let oldObjects = oldRealm.objects('Person');
+                let newObjects = newRealm.objects('Person');
 
                 // loop through all objects and set the name property in the new schema
                 for (let i = 0; i < oldObjects.length; i++) {

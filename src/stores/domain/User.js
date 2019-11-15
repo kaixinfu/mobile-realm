@@ -1,11 +1,11 @@
-import Entity from './Entity';
+import Base from './Base';
 import {observable} from 'mobx';
 import moment from 'moment';
 import realm from '../../servers/realm';
 import global from '../Global'
 import _ from 'lodash'
 
-export default class User extends Entity {
+export default class User extends Base {
     @observable user_uuid = '';
     // 是否登录
     @observable user_type = '';
